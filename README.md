@@ -2,7 +2,7 @@
 
 ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 ![POO](https://img.shields.io/badge/Paradigma-POO-blue?style=for-the-badge)
-![GitHub Repo Size](https://img.shields.io/github/repo-size/seu-usuario/seu-repositorio?style=for-the-badge)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/Johannesgauss/Library?style=for-the-badge)
 
 Este repositório contém a modelagem de arquitetura e a especificação técnica para o sistema de cadastro, consulta e faturamento de títulos de uma livraria. O projeto foi integralmente construído aplicando os pilares da **Programação Orientada a Objetos (POO)** em Java.
 
@@ -16,13 +16,7 @@ O sistema resolve de forma escalável o gerenciamento de títulos comerciais de 
 
 ## 🏗️ Arquitetura e Modelagem de Classes
 
-A arquitetura do sistema corrige e refina o esboço inicial feito em quadro branco, estruturando a herança em três níveis lógicos para evitar redundâncias de atributos e garantir o princípio da responsabilidade única.
-[ Titulo (Abstract) ]
-         /            \
-        /              \
- [ Livro ]          [ Revista ]
-    |
-    ### 📋 Especificação dos Componentes
+### 📋 Especificação dos Componentes
 
 #### 1. `Titulo` (Superclasse Abstrata)
 * **Responsabilidade:** Abstrair as propriedades fundamentais e universais de qualquer item comercializado.
@@ -53,7 +47,7 @@ A arquitetura do sistema corrige e refina o esboço inicial feito em quadro bran
 
 ## 💸 Regra de Negócio: Faturamento e Polimorfismo
 
-O método `comprar(Titulo titulo, int quantidade)` utiliza o conceito de **Polimorfismo dinâmico**. Ele recebe a referência genérica da superclasse `Titulo`, permitindo o faturamento de qualquer tipo de obra sem a necessidade de duplicar código ou criar múltiplos métodos específicos.
+O método `comprar(Titulo titulo, int quantidade)` utiliza **Polimorfismo**. Ele recebe a referência genérica da superclasse `Titulo`, permitindo o faturamento de qualquer tipo de obra sem a necessidade de duplicar código ou criar múltiplos métodos específicos.
 
 ### Cálculo de Descontos Cumulativos
 A precificação final na nota fiscal é calculada aplicando o percentual específico do tipo de título somado ao desconto universal configurado de **0,05%** para toda a loja:
