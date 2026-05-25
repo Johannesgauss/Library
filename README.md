@@ -15,7 +15,7 @@ O sistema resolve de forma escalável o gerenciamento de títulos comerciais de 
 ---
 
 ## 🏗️ Arquitetura e Modelagem de Classes
-
+![Arquitetura do projeto](images/Arquitetura.png)
 ### 📋 Especificação dos Componentes
 
 #### 1. `Titulo` (Superclasse Abstrata)
