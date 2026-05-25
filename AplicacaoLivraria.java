@@ -1,4 +1,4 @@
-public class aplicacaoLivraria {
+public class AplicacaoLivraria {
     public static String nomeLivraria = "Livraria Tech Central"; 
 
     public static Revista criarRevista(String nome, String editora, double preco, String periodicidade) 
@@ -20,7 +20,7 @@ public class aplicacaoLivraria {
         double precoFinal = precoBrutoTotal - valorDesconto;
 
         System.out.println("\n=== NOTA FISCAL ===");
-        System.out.println("Livraria: " + aplicacaoLivraria.nomeLivraria);
+        System.out.println("Livraria: " + AplicacaoLivraria.nomeLivraria);
         System.out.println("Título: " + titulo.getNome());
         System.out.println("Quantidade: " + quantidade);
         System.out.println("Preço Final com Descontos: R$ " + String.format("%.2f", precoFinal));

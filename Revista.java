@@ -4,7 +4,6 @@ public class Revista extends Titulo {
     public Revista(String nome, String editora, double preco, String periodicidade) 
     {
         super(nome, editora, preco);
-        this.periodicidade = periodicity;
         this.periodicidade = periodicidade;
     }
 

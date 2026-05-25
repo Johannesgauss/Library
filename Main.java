@@ -1,75 +1,37 @@
-public class Main 
-{
+public class Main {
+    public static void main(String[] args) {
 
-	public static void main(String[] args) 
-	{
+        // 1. Criando livros instanciando diretamente
+        Livro livro1 = new Livro(
+                "Java Básico",
+                "Carlos Silva",
+                "Tech Books",
+                "Livro introdutório de Java",
+                100
+        );
 
-		AplicacaoLivraria livraria = new AplicacaoLivraria();
-			
-		Livro livro1 = new Livro(
-				"Java Básico",
-				"Carlos Silva",
-				"Tech Books",
-				"Livro introdutório de Java",
-				100
-		);
+        // 2. Usando os métodos estáticos de fábrica da AplicacaoLivraria e salvando em variáveis
+        LivroDidatico didatico = AplicacaoLivraria.criarLivroDidatico(
+                "História Geral",
+                "Ana Souza",
+                "Editora Brasil",
+                "Resumo de história mundial",
+                120,
+                "História"
+        );
 
-		livraria.adicionarLivro(livro1);
+        Revista r1 = AplicacaoLivraria.criarRevista("A", "Editora X", 10, "Mensal");
+        Revista r2 = AplicacaoLivraria.criarRevista("B", "Editora X", 20, "Semanal");
 
-		livraria.criarLivroDidatico(
-				"História Geral",
-				"Ana Souza",
-				"Editora Brasil",
-				"Resumo de história mundial",
-				120,
-				"História"
-		);
+        // 3. Testando as consultas (Nomes dos métodos corrigidos)
+        System.out.println("\nResumo do livro:");
+        System.out.println(livro1.getResumo()); // Corrigido
 
-		livraria.criarRevista(
-				"Revista Tech",
-				"Editora Tech",
-				30,
-				"Mensal"
-		);
+        System.out.println("\nMesma editora? " + r1.temMesmaEditora(r2)); // Corrigido
 
-		livraria.criarRevista(
-				"Ciência Hoje",
-				"Editora Tech",
-				40,
-				"Semanal"
-		);
-
-		System.out.println("\nResumo do livro:");
-		System.out.println(livro1.consultarResumo());
-
-		Revista r1 = new Revista("A", "Editora X", 10, "Mensal");
-		Revista r2 = new Revista("B", "Editora X", 20, "Semanal");
-
-		System.out.println("\nMesma editora? " + r1.mesmaEditora(r2));
-
-		livraria.listarLivros();
-		livraria.listarRevistas();
-
-		livraria.comprar(livro1, 2);
-
-		LivroDidatico didatico = new LivroDidatico(
-				"Matemática",
-				"João Pedro",
-				"Educação LTDA",
-				"Livro de matemática",
-				150,
-				"Exatas"
-		);
-
-		livraria.comprar(didatico, 1);
-
-		Revista revista = new Revista(
-				"Games",
-				"Game Editora",
-				25,
-				"Mensal"
-		);
-
-		livraria.comprarRevista(revista, 3);
-	}
+        // 4. Testando o método polimórfico de comprar (Nomes dos métodos corrigidos)
+        AplicacaoLivraria.comprar(livro1, 2);
+        AplicacaoLivraria.comprar(didatico, 1);
+        AplicacaoLivraria.comprar(r1, 3); // Substitui o 'comprarRevista'
+    }
 }
