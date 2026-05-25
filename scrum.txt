@@ -1,0 +1,58 @@
+classe BASE (SUPERCLASSE ABSTRATA): Titulo
+* Objetivo: Reunir dados comuns a qualquer item vendido na livraria.
+
+Atributos:
+    - nome : String
+    - editora : String
+    - preco : double
+
+Métodos:
+    + getPercentualDesconto() : double [Abstrato - cada filho implementa o seu]
+    + toString() : String
+
+classe: Livro (extends Titulo)
+* Objetivo: Representar livros comuns da livraria.
+
+Atributos:
+    - autorPrincipal : String
+    - resumo : String
+
+Métodos:
+    + getResumo() : String [Método solicitado no enunciado]
+    + getPercentualDesconto() : double [Retorna 0.03 (3%)]
+    + toString() : String
+
+classe: LivroDidatico (extends Livro)
+* Objetivo: Especialização do Livro. Evita que livros comuns tenham "área".
+
+Atributos:
+    - area : String
+
+Métodos:
+    + getPercentualDesconto() : double [Sobrescreve para retornar 0.10 (10%)]
+    + toString() : String
+
+classe: Revista (extends Titulo)
+* Objetivo: Representar as revistas periódicas da livraria.
+
+Atributos:
+    - periodicidade : String
+
+Métodos:
+    + temMesmaEditora(outra : Revista) : boolean [Método solicitado no enunciado]
+    + getPercentualDesconto() : double [Retorna 0.02 (2%)]
+    + toString() : String
+
+classe CONTROLADORA / APLICAÇÃO: aplicacaoLivraria
+* Objetivo: Conter o ponto de entrada (main), variáveis globais e as regras 
+            de negócio/faturamento.
+
+Atributos Globais:
+    + nomeLivraria : String [static - acessível universalmente]
+
+Métodos de Fábrica e Operação:
+    + criarRevista(...) : Revista
+    + criarLivroDidatico(...) : LivroDidatico
+    + comprar(titulo : Titulo, quantidade : int) : void
+      [Usa POLIMORFISMO ao aceitar qualquer classe que herde de 'Titulo']
+      [Gera a Nota Fiscal calculando Preço * Qtd - Desconto do Tipo - 0,05% Geral]
